@@ -1,0 +1,17 @@
+import { NextResponse } from "next/server";
+
+export async function GET(req: Request) {
+  return NextResponse.json({ 
+    message: "Auth route reached successfully",
+    path: req.url,
+    timestamp: new Date().toISOString()
+  });
+}
+
+export async function POST(req: Request) {
+  return NextResponse.json({ 
+    message: "Auth route reached successfully",
+    path: req.url,
+    timestamp: new Date().toISOString()
+  });
+}

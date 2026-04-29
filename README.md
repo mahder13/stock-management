@@ -1,36 +1,65 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Stock Management System
 
-## Getting Started
+A comprehensive inventory management system built with Next.js 15, PostgreSQL, and Prisma.
 
-First, run the development server:
+## 🚀 Features
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### 1. Authentication
+- Secure User Login and Signup (NextAuth.js).
+- Protected API routes and Dashboard access.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### 2. Modern Dashboard
+- **Real-time Metrics**: Total Inventory, Received, On Hand, Shipped.
+- **Visualizations**:
+    - "Inventory Status" Bar Chart (Monthly Received vs Out).
+    - "Stock Out Reasons" Donut Chart (Breakdown of usage reasons).
+- **Quick Actions**: "Quick Stock In", "Quick Stock Out", and "New Product" shortcuts.
+- **Clickable Metrics**: Navigate directly to Products or History from dashboard cards.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 3. Product Management
+- **CRUD Operations**: Add, Edit, Delete products.
+- **Search & Filter**: Real-time search by Name/SKU. "Low Stock" filter.
+- **Inventory Tracking**: Set minimum stock levels and get alerts.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 4. Stock Control
+- **Stock In/Out**: Dedicated modal for adjusting stock of existing items.
+- **History Log**: Complete audit trail of every stock movement (Who, When, Why).
 
-## Learn More
+### 5. Supplier Management
+- Manage supplier details (Name, Contact, Address).
+- Link products to specific suppliers.
 
-To learn more about Next.js, take a look at the following resources:
+## 🛠 Tech Stack
+- **Frontend**: Next.js 15 (App Router), TailwindCSS, Recharts, Lucide Icons.
+- **Backend**: Next.js API Routes.
+- **Database**: PostgreSQL with Prisma ORM.
+- **Auth**: NextAuth.js (JWT).
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📦 Setup & Installation
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1.  **Clone the repository**
+2.  **Install dependencies**:
+    ```bash
+    npm install
+    ```
+3.  **Setup Environment Variables** (`.env`):
+    ```env
+    DATABASE_URL="postgresql://user:password@localhost:5432/stock_db"
+    NEXTAUTH_SECRET="your-secret-key"
+    NEXTAUTH_URL="http://localhost:3000"
+    ```
+4.  **Initialize Database**:
+    ```bash
+    npx prisma generate
+    npx prisma db push
+    ```
+5.  **Run Development Server**:
+    ```bash
+    npm run dev
+    ```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📝 Usage Guide
+- **Login**: Use your credentials to access the dashboard.
+- **Add Product**: Go to "Products" or click "New Product" on Dashboard.
+- **Adjust Stock**: Use the Green/Red "Quick" buttons on the Dashboard for daily adjustments.
+- **View History**: Check the "Stock History" page for reports.
